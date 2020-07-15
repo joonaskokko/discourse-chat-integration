@@ -50,11 +50,11 @@ module DiscourseChat
       end
 
       def self.message_text(post)
-        display_name = "@#{post.user.username}"
+        display_name = "#{post.user.username}"
         full_name = post.user.name || ""
 
         if !(full_name.strip.empty?) && (full_name.strip.gsub(' ', '_').casecmp(post.user.username) != 0) && (full_name.strip.gsub(' ', '').casecmp(post.user.username) != 0)
-          display_name = "#{full_name} @#{post.user.username}"
+          display_name = "#{full_name} #{post.user.username}"
         end
 
         topic = post.topic
